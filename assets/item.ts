@@ -424,32 +424,81 @@ export const HeaderItems = [
     value: "",
   },
   {
-    label: "Nhà Phố",
-    value: "chuyen-muc/thiet-ke-nha-pho",
-  },
-  {
-    label: "Biệt Thự",
-    value: "chuyen-muc/thiet-ke-biet-thu",
-  },
-  {
-    label: "Nội Thất",
-    value: "chuyen-muc/thiet-ke-noi-that",
+    label: "Về Nha Khoa",
+    value: "gioi-thieu/doi-ngu-bac-si",
+    children: [
+      {
+        label: "Đội Ngũ",
+        value: "gioi-thieu/doi-ngu-bac-si",
+      },
+      {
+        label: "Công Nghệ",
+        value: "gioi-thieu/cong-nghe",
+      },
+      {
+        label: "Lịch Sử",
+        value: "gioi-thieu/lich-su",
+      },
+    ],
   },
   {
     label: "Dịch Vụ",
-    value: "chuyen-muc/dich-vu-thiet-ke-thi-cong",
+    value: "dich-vu/implant",
+    children: [
+      {
+        label: "Implant",
+        value: "dich-vu/implant",
+      },
+      {
+        label: "Phục Hình Răng",
+        value: "dich-vu/phuc-hinh-rang",
+      },
+      {
+        label: "Chỉnh Nha - Niềng Răng",
+        value: "dich-vu/chinh-nha-nieng-rang",
+      },
+      {
+        label: "Nha Chu",
+        value: "dich-vu/nha-chu",
+      },
+      {
+        label: "Nội Nha",
+        value: "dich-vu/noi-nha",
+      },
+      {
+        label: "Trám Răng",
+        value: "dich-vu/tram-rang",
+      },
+      {
+        label: "Tẩy Trắng Răng",
+        value: "dich-vu/tay-trang-rang",
+      },
+      {
+        label: "Nhổ Răng/Tiểu Phẫu Răng",
+        value: "dich-vu/nho-rang-tieu-phau-rang",
+      },
+      {
+        label: "Răng Trẻ Em",
+        value: "dich-vu/rang-tre-em",
+      },
+    ],
   },
   {
-    label: "Tin tức",
-    value: "chuyen-muc/tin-tuc-xay-dung",
+    label: "Khuyến Mãi",
+    value: "khuyen-mai",
+  },
+
+  {
+    label: "Tin Tức",
+    value: "tin-tuc",
   },
   {
-    label: "Liên hệ",
+    label: "Thắc Mắc",
+    value: "thac-mac",
+  },
+  {
+    label: "Liên Hệ",
     value: "lien-he",
-  },
-  {
-    label: "Khai toán",
-    value: "khai-toan",
   },
 ];
 
