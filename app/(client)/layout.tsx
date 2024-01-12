@@ -10,7 +10,7 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
   return (
     <div className="font-LexendDeca font-extralight">
       <Header />
-      <div className="mt-[78px] ">{children}</div>
+      <div className="">{children}</div>
       {/* <OnTop />
       <Hotline /> */}
       <div className="bg-gray-200">

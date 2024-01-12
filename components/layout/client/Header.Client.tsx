@@ -44,11 +44,8 @@ const Header = () => {
           </div>
           <div className="flex h-full gap-5">
             {HeaderItems.map((item, index) => (
-              <>
-                <div
-                  key={index}
-                  className="flex flex-col justify-between h-full group cursor-pointer"
-                >
+              <div key={index}>
+                <div className="flex flex-col justify-between h-full group cursor-pointer">
                   <div className="w-0 group-hover:w-full h-1 bg-mainColor  duration-300"></div>
                   <div className="font-normal uppercase text-gray-500 hover:text-black duration-300  text-[13px] flex items-center gap-1">
                     <p> {item.label}</p>
@@ -56,7 +53,7 @@ const Header = () => {
                   </div>
                   <div></div>
                 </div>
-              </>
+              </div>
             ))}
           </div>
           <div>

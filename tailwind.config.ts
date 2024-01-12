@@ -24,6 +24,7 @@ const config: Config = {
 
         //custom color
         mainColor: "#ef1c58",
+        mainColorHover: "#b20032",
       },
     },
     keyframes: {
