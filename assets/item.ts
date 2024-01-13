@@ -77,6 +77,7 @@ import { GoGitBranch } from "react-icons/go";
 interface IconMappingType {
   [key: string]: IconType;
 }
+export const WebsiteUrl = "https://congtyads.com";
 
 export const IconMapping: IconMappingType = {
   IoFlashOutline: IoFlashOutline,
@@ -243,12 +244,6 @@ export const AdminPageHeaderItems = [
         value: "danh-muc-san-pham",
         icon: "CiBoxList",
       },
-
-      {
-        label: "Slide giới thiệu",
-        value: "slide-gioi-thieu",
-        icon: "BiSlideshow",
-      },
     ],
   },
   {
@@ -276,11 +271,6 @@ export const AdminPageHeaderItems = [
         value: "bai-gioi-thieu",
         icon: "BsFileEarmarkPost",
       },
-      {
-        label: "Cấu Hình SEO",
-        value: "cau-hinh-seo",
-        icon: "FaChartLine",
-      },
     ],
   },
   {
@@ -292,6 +282,11 @@ export const AdminPageHeaderItems = [
         label: "Kênh Truyền Thông",
         value: "kenh-truyen-thong",
         icon: "PiShareNetworkLight",
+      },
+      {
+        label: "Slide giới thiệu",
+        value: "slide-gioi-thieu",
+        icon: "BiSlideshow",
       },
       {
         label: "Hình Ảnh",
@@ -379,7 +374,6 @@ export const AdminPageHeaderItems = [
     ],
   },
 ];
-
 /*<---------------------------------------------------------- Custom System ----------------------------------------------------------> */
 
 export const SocialMediaCustom = [
@@ -531,41 +525,49 @@ export const ToolsTipsSocialMediaItems = [
 
 /*<-------------------------------------------------------------------------------------------------------------------- CUSTOM --------------------------------------------------------------------------------------------------------------------> */
 
-export const TypeProductItems2 = [
+export const ProductTypeItems = [
   {
-    label: "Sản phẩm khuyến mãi",
-    value: "san-pham-khuyen-mai",
+    label: "First Parent",
+    value: "first-parent",
   },
   {
-    label: "Sản phẩm bán chạy",
-    value: "san-pham-ban-chay",
+    label: "Second Parent",
+    value: "second-parent",
   },
   {
-    label: "Sản phẩm mới",
-    value: "san-pham-moi",
+    label: "Third Parent",
+    value: "third-parent",
   },
   {
-    label: "Sản phẩm nổi bật",
-    value: "san-pham-noi-bat",
+    label: "Fourth Parent",
+    value: "fourth-parent",
+  },
+  {
+    label: "Fifth Parent",
+    value: "fifth-parent",
+  },
+  {
+    label: "Sixth Parent",
+    value: "sixth-parent",
   },
 ];
 
-export const PolicyItems = [
+export const PostsTypeItems = [
   {
-    label: "Giao nhận hàng",
-    value: "giao-nhan-hang",
+    label: "Về Nha Khoa",
+    value: "Về Nha Khoa",
   },
   {
-    label: "Chính sách đổi trả",
-    value: "chinh-sach-doi-tra",
+    label: "Dịch Vụ",
+    value: "Dịch Vụ",
   },
   {
-    label: "Chính sách đặt hàng",
-    value: "chinh-sach-dat-hang",
+    label: "Tin tức",
+    value: "Tin tức",
   },
   {
-    label: "Chính sách bảo mật",
-    value: "chinh-sach-bao-mat",
+    label: "Thắc Mắc",
+    value: "Thắc Mắc",
   },
 ];
 

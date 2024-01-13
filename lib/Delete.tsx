@@ -1,16 +1,12 @@
-import { updateDocument } from "@/config/Services/FirebaseAPI/FireStoreAPI";
+import { delDocument } from "@config/Services/Firebase/FireStoreDB";
 import { notification } from "antd";
 
-export async function UpdateDataProps(
-  Collection: string,
-  id: string,
-  data: any
-) {
-  updateDocument(Collection, id, data)
+export async function DeleteDataProps(Collection: string, id: string) {
+  delDocument(Collection, id)
     .then(() => {
       notification.success({
         message: "Thành công!",
-        description: `Cập nhật thành công!`,
+        description: `Xóa thành công!`,
       });
     })
     .catch((err) => {

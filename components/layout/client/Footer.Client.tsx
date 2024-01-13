@@ -12,7 +12,7 @@ const Footer = () => {
           <h2 className="uppercase pb-1 border-b-2 w-full border-mainColor font-normal text-[20px]">
             Giờ làm việc
           </h2>
-          <div>
+          <div className="mt-3">
             <div className="flex items-center gap-2">
               <AiOutlineClockCircle className="" />
 
@@ -25,13 +25,13 @@ const Footer = () => {
           <h2 className="uppercase pb-1 border-b-2 w-full border-mainColor font-normal text-[20px]">
             thông tin liên hệ
           </h2>
-          <div>
+          <div className="mt-3">
             {" "}
             <div>
               <div className="flex items-center gap-2">
                 <CiLocationOn className="" />
 
-                <h2>Địa chỉ chúng tôi:</h2>
+                <h2>Địa chỉ:</h2>
               </div>
               <p className="font-semibold">address</p>
             </div>
@@ -39,7 +39,7 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <SiGmail className="" />
 
-                <h2>Email chúng tôi:</h2>
+                <h2>Email:</h2>
               </div>
 
               <p className="font-semibold">gmail</p>
@@ -58,13 +58,15 @@ const Footer = () => {
           <h2 className="uppercase pb-1 border-b-2 w-full border-mainColor font-normal text-[20px]">
             Bài Viết
           </h2>
-          <div></div>
+          <div className="mt-3"></div>
         </div>
         <div>
           <h2 className="uppercase pb-1 border-b-2 w-full border-mainColor font-normal text-[20px]">
             Liên Kết Fanpage{" "}
           </h2>
-          <div></div>
+          <div className="mt-3">
+            
+          </div>
         </div>
       </div>
     </div>

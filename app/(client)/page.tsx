@@ -1,7 +1,6 @@
 import HomeService from "@components/client/Home/Service";
 import HomeSlide from "@components/client/Home/Slide";
 import ShortIntro from "@components/client/Home/ShortIntro";
-import { getData } from "@lib/get-data";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
