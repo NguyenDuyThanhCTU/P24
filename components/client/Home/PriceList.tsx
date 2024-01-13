@@ -3,9 +3,9 @@ import React from "react";
 const HomePriceList = () => {
   return (
     <div className="bg-[url(https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/price%20list.jpg?alt=media&token=efae4c52-a152-42da-abbe-a76a06543977)] h-[60vh] bg-cover bg-left bg-no-repeat ">
-      <div className="w-[1100px] mx-auto flex justify-between h-full items-center ">
+      <div className="p:w-auto d:w-[1100px] mx-auto flex justify-between h-full items-center ">
         <div></div>
-        <div className="text-black ">
+        <div className="d:text-black p:text-white">
           <h2 className="text-[30px] font-normal uppercase ">Bảng giá</h2>
           <div className="text-[26px] font-normal">
             Áp dụng đến hết năm 2019

@@ -78,6 +78,7 @@ interface IconMappingType {
   [key: string]: IconType;
 }
 export const WebsiteUrl = "https://congtyads.com";
+export const DB_URL = "nhakhoathammytranhuy";
 
 export const IconMapping: IconMappingType = {
   IoFlashOutline: IoFlashOutline,
@@ -419,7 +420,7 @@ export const HeaderItems = [
   },
   {
     label: "Về Nha Khoa",
-    value: "gioi-thieu/doi-ngu-bac-si",
+    value: "gioi-thieu",
     children: [
       {
         label: "Đội Ngũ",
@@ -437,7 +438,7 @@ export const HeaderItems = [
   },
   {
     label: "Dịch Vụ",
-    value: "dich-vu/implant",
+    value: "dich-vu",
     children: [
       {
         label: "Implant",

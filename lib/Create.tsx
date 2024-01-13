@@ -1,4 +1,4 @@
-import { addDocument } from "@config/Services/Firebase/FireStoreDB";
+import { addDocument } from "@config/Services/FirebaseAPI/FireStoreAPI";
 import { notification } from "antd";
 
 export async function AddDataProps(Collection: string, data: any) {

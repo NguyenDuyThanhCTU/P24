@@ -15,12 +15,6 @@ const ContactConfig = ({ Data }: any) => {
   const { setFormData, FormData } = useStateProvider();
   const ContactItems = [
     {
-      label: "Địa chỉ website",
-      value: Data?.WebsiteAddress,
-      tooltip:
-        "Số điện thoại chính của website, Số điện thoại này sẽ được ưu tiên hiển thị trên website và nút gọi điện thoại",
-    },
-    {
       label: "Số điện thoại",
       value: Data?.Hotline,
       tooltip: "",

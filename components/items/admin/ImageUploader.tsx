@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { useDropzone } from "react-dropzone";
-import { uploadImage } from "./Handle";
-import { useStateProvider } from "@context/StateProvider";
 import { notification } from "antd";
+import { uploadImage } from "../Handle";
 
 interface ImageUploaderProps {
   setForm: (value: string) => void;

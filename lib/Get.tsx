@@ -1,12 +1,14 @@
 // add new document to collection
 
+import { DB_URL } from "@assets/item";
+
 export async function getData(CollectionName: string, Document?: string) {
   let firebaseEndpoint: string;
 
   if (Document) {
-    firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/ads-company-285a6/databases/(default)/documents/${CollectionName}/${Document}`;
+    firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/${DB_URL}/databases/(default)/documents/${CollectionName}/${Document}`;
   } else {
-    firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/ads-company-285a6/databases/(default)/documents/${CollectionName}`;
+    firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/${DB_URL}/databases/(default)/documents/${CollectionName}`;
   }
 
   try {
@@ -35,6 +37,93 @@ export async function getData(CollectionName: string, Document?: string) {
 
       return documents;
     }
+  } catch (error) {
+    console.error("Lỗi khi lấy dữ liệu:", error);
+    // throw new Error("Failed to fetch data.");
+  }
+}
+
+interface getDataProps {
+  CollectionName: string;
+  Document?: string;
+  numberOfItems?: number;
+}
+export async function getDataLimit(
+  CollectionName: string,
+  Document?: string,
+  numberOfItems?: number
+) {
+  let firebaseEndpoint: string;
+
+  if (Document) {
+    firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/${DB_URL}/databases/(default)/documents/${CollectionName}/${Document}`;
+  } else {
+    firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/${DB_URL}/databases/(default)/documents/${CollectionName}`;
+  }
+
+  // Thêm numberOfItems vào URL nếu có
+  if (numberOfItems) {
+    firebaseEndpoint += `?pageSize=${numberOfItems}`;
+  }
+
+  try {
+    const response = await fetch(firebaseEndpoint, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("Network response was not ok.");
+    }
+
+    const data = await response.json();
+    if (Document) {
+      return convertDocumentData(data.fields);
+    } else {
+      const documents = data.documents.map((doc: any) => {
+        const formattedDoc: any = {
+          id: doc.name.split("/").pop(),
+        };
+
+        for (const field in doc.fields) {
+          if (Object.prototype.hasOwnProperty.call(doc.fields, field)) {
+            formattedDoc[field] = convertFieldValue(doc.fields[field]);
+          }
+        }
+
+        return formattedDoc;
+      });
+
+      return documents;
+    }
+  } catch (error) {
+    console.error("Lỗi khi lấy dữ liệu:", error);
+    // throw new Error("Failed to fetch data.");
+  }
+}
+
+export async function getDataByField(CollectionName: string) {
+  let firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/${DB_URL}/databases/(default)/documents/${CollectionName}/VS7Smr9m5OB3tuMzIGv4`;
+
+  try {
+    const response = await fetch(firebaseEndpoint, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("Network response was not ok.");
+    }
+
+    const data = await response.json();
+
+    const documents = data.documents.map((doc: any) => {
+      const formattedDoc: any = {
+        id: doc.name.split("/").pop(),
+      };
+
+      for (const field in doc.fields) {
+        if (Object.prototype.hasOwnProperty.call(doc.fields, field)) {
+          formattedDoc[field] = convertFieldValue(doc.fields[field]);
+        }
+      }
+
+      return formattedDoc;
+    });
+
+    return documents;
   } catch (error) {
     console.error("Lỗi khi lấy dữ liệu:", error);
     // throw new Error("Failed to fetch data.");

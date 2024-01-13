@@ -58,7 +58,7 @@ const Medicalregister = () => {
       <div className="bg-center uppercase bg-no-repeat bg-[url(https://firebasestorage.googleapis.com/v0/b/suanhacantho-3b53d.appspot.com/o/UI%2FUntitled.png?alt=media&token=bdd28cc7-79bf-453a-b24e-9d0ec902a960)] py-10 text-center text-[25px]  font-normal text-blue-800">
         đăng ký khám & tư vấn
       </div>
-      <div className="w-[1200px] mx-auto flex justify-between pt-10 items-center">
+      <div className="p:w-auto d:w-[1200px] p:mx-2 d:mx-auto flex justify-between pt-10 items-center d:flex-row p:flex-col">
         <div>
           <form>
             <div>

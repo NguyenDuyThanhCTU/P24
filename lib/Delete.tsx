@@ -1,4 +1,4 @@
-import { delDocument } from "@config/Services/Firebase/FireStoreDB";
+import { delDocument } from "@config/Services/FirebaseAPI/FireStoreAPI";
 import { notification } from "antd";
 
 export async function DeleteDataProps(Collection: string, id: string) {

@@ -5,10 +5,7 @@ import { AiOutlineRight } from "react-icons/ai";
 
 const HomeNews = ({ Data }: any) => {
   const DetailFirstPostDate = convertDate(Data[0]?.createdAt);
-  const truncatedContent = Data[0]?.content
-    ? Data[0]?.content.substring(0, 300)
-    : "";
-  const markupFirst = { __html: truncatedContent };
+
   return (
     <div className="bg-white py-10">
       <div className="d:w-[1440px]  p:w-auto d:mx-auto">
@@ -34,7 +31,7 @@ const HomeNews = ({ Data }: any) => {
               />
             </div>
             <div className="col-span-2 font-LexendDeca font-extralight mt-5">
-              <Link href={`/tin-tuc/${Data[0]?.url}`}>
+              <Link href={`/bai-viet/${Data[0]?.url}?spid=${Data[0].id}`}>
                 <p className="text[15px]  ">
                   Nha khoa Trần Húy | {DetailFirstPostDate}
                 </p>
@@ -43,27 +40,19 @@ const HomeNews = ({ Data }: any) => {
                 </h2>
               </Link>
 
-              <div
-                dangerouslySetInnerHTML={markupFirst}
-                className=" text-[14px] truncate2 mt-2 font-normal"
-              ></div>
+              <div className=" text-[14px] truncate2 mt-2 font-normal">
+                {Data[0].description}
+              </div>
             </div>
           </div>
           <div className="flex-1">
             {Data.slice(1, 6).map((item: any, idx: number) => {
               const DetailPostDate = convertDate(item?.createdAt);
-              const content = item?.content;
-              const maxLength = 200;
 
-              const truncatedContent = content
-                ? content.substring(0, maxLength)
-                : "";
-
-              const markup = { __html: truncatedContent };
               return (
                 <div key={idx} className="hover:bg-gray-100 duration-300 py-2">
                   <div className="grid grid-cols-3 gap-5 p-2 pt-0">
-                    <Link href={`/tin-tuc/${item.url}`}>
+                    <Link href={`/bai-viet/${item.url}?spid=${item.id}`}>
                       <div className="w-full overflow-hidden">
                         <img
                           src={item.image}
@@ -73,7 +62,7 @@ const HomeNews = ({ Data }: any) => {
                       </div>
                     </Link>
                     <div className="col-span-2 ">
-                      <Link href={`/tin-tuc/${item.url}`}>
+                      <Link href={`/bai-viet/${item.url}?spid=${item.id}`}>
                         <p className="text[15px]  ">
                           Nha khoa Trần Húy | {DetailPostDate}
                         </p>
@@ -82,10 +71,9 @@ const HomeNews = ({ Data }: any) => {
                         </h2>
                       </Link>
 
-                      <div
-                        dangerouslySetInnerHTML={markup}
-                        className="truncate2 text-[14px] mt-2 font-normal"
-                      ></div>
+                      <div className="truncate2 text-[14px] mt-2 font-normal">
+                        {item.description}
+                      </div>
                     </div>
                   </div>
                 </div>

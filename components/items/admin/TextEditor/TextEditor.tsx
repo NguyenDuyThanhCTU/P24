@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 
-import { uploadImage } from "@components/items/server-items/Handle";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
+import { uploadImage } from "@components/items/Handle";
 interface Props {
   initialValue?: string;
   onChange: (value: string) => void;

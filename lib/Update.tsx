@@ -1,4 +1,4 @@
-import { updateDocument } from "@config/Services/Firebase/FireStoreDB";
+import { updateDocument } from "@config/Services/FirebaseAPI/FireStoreAPI";
 import { notification } from "antd";
 export async function UpdateDataProps(
   Collection: string,
