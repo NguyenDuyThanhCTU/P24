@@ -7,12 +7,12 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Dịch Vụ | Sửa Nhà Cần Thơ",
-  description: "Sửa Nhà Cần Thơ - An Lành Cho Gia Đình Việt",
+  title: "Trang Chủ - Nha khoa thẩm mỹ Trần Húy",
+  description: "Trần Húy - Nha khoa thẩm mỹ uy tín tại Cần Thơ",
 };
 
 const ServicePage = async () => {
-  const FetchData = await getData("Posts");
+  const FetchData: any = await getData("Posts");
   const Data = FetchData.filter((item: any) => item.level0 === "Thắc Mắc");
 
   return (

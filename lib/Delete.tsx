@@ -1,18 +1,19 @@
-import { delDocument } from "@config/Services/FirebaseAPI/FireStoreAPI";
+import { doc, deleteDoc } from "firebase/firestore";
+import { db } from "@config/Firebase";
 import { notification } from "antd";
 
-export async function DeleteDataProps(Collection: string, id: string) {
-  delDocument(Collection, id)
-    .then(() => {
+export const delDocument = async (CollectionName: string, id: string) => {
+  try {
+    await deleteDoc(doc(db, CollectionName, id)).then(() => {
       notification.success({
         message: "Thành công!",
         description: `Xóa thành công!`,
       });
-    })
-    .catch((err) => {
-      notification.error({
-        message: "Thất bại!",
-        description: `Mã lỗi: ${err}`,
-      });
     });
-}
+  } catch (error) {
+    notification.error({
+      message: "Thất bại!",
+      description: `Mã lỗi: ${error}`,
+    });
+  }
+};

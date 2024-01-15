@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const HomePage = async () => {
-  const Data = await getDataLimit("Posts", undefined, 6);
+  const Data: any = await getDataLimit("Posts", 3);
   return (
     <div className="flex flex-col gap-10">
       <HomeSlide />

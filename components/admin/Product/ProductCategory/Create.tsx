@@ -2,7 +2,7 @@
 import { ProductTypeItems } from "@assets/item";
 import InputForm from "@components/items/admin/InputForm";
 import { useStateProvider } from "@context/StateProvider";
-import { AddDataProps } from "@lib/Create";
+import { addData } from "@lib/Create";
 import { notification } from "antd";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -20,7 +20,7 @@ const Create = ({ setIsOpen }: any) => {
       });
     }
 
-    await AddDataProps("ProductTypes", FormData).then(() => {
+    await addData("ProductTypes", FormData).then(() => {
       setIsOpen(false);
       router.refresh();
     });

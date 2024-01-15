@@ -2,7 +2,7 @@
 import { PostsTypeItems, ProductTypeItems, WebsiteUrl } from "@assets/item";
 import InputForm from "@components/items/admin/InputForm";
 import { useStateProvider } from "@context/StateProvider";
-import { AddDataProps } from "@lib/Create";
+import { addData } from "@lib/Create";
 import { Tabs, notification } from "antd";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,7 +53,7 @@ const Create = ({ setIsOpen, Data, pid }: CreateProps) => {
   const HandleSubmit = async () => {
     console.log(FormData);
 
-    await AddDataProps("Posts", FormData).then(() => {
+    await addData("Posts", FormData).then(() => {
       setIsOpen(false);
       router.refresh();
     });

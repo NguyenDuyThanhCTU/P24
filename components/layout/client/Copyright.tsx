@@ -1,3 +1,7 @@
+"use client";
+
+import { getData } from "@lib/Get";
+
 const Copyright = () => {
   return (
     <>

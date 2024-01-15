@@ -18,15 +18,15 @@ const ServicePage = async ({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const FetchData = await getData("Posts");
-  const Data = FetchData.filter((item: any) => item.level0 === "Dịch Vụ");
+  const FetchData: any = await getData("Posts");
+  const Data = FetchData?.filter((item: any) => item.level0 === "Dịch Vụ");
 
   return (
     <>
       <div className="p:col-auto d:col-span-5">
         <div className="font-LexendDeca font-extralight ">
           <div className="flex flex-col gap-8">
-            {Data.reverse().map((item: any, idx: number) => {
+            {Data?.reverse().map((item: any, idx: number) => {
               const Date = convertDate(item?.createdAt);
               const markup = { __html: item?.content };
               return (

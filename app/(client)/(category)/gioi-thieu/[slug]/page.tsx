@@ -18,7 +18,7 @@ const ServicePage = async ({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const FetchData = await getData("Posts");
+  const FetchData: any = await getData("Posts");
   const Data = FetchData.filter((item: any) => item.level0 === "Về Nha Khoa");
 
   return (

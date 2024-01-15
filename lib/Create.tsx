@@ -1,18 +1,27 @@
-import { addDocument } from "@config/Services/FirebaseAPI/FireStoreAPI";
+import {
+  collection,
+  serverTimestamp,
+  addDoc,
+
+} from "firebase/firestore";
+import { db } from "@config/Firebase";
 import { notification } from "antd";
 
-export async function AddDataProps(Collection: string, data: any) {
-  addDocument(Collection, data)
-    .then(() => {
+export const addData = async (Collection: string, data: any) => {
+  data.createdAt = serverTimestamp();
+
+  try {
+    const collectionRef = collection(db, Collection);
+    await addDoc(collectionRef, data).then(() => {
       notification.success({
         message: "Thành công!",
         description: `Thêm thành công!`,
       });
-    })
-    .catch((err) => {
-      notification.error({
-        message: "Thất bại!",
-        description: `Mã lỗi: ${err}`,
-      });
     });
-}
+  } catch (error) {
+    notification.success({
+      message: "Thất bại!",
+      description: `Mã lỗi: ${error}`,
+    });
+  }
+};

@@ -4,12 +4,12 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Liên Hệ | Quảng Cáo, Cơ Khí Xây Dựng",
-  description: "Hoàng Tuấn - Uy tín tạo niềm tin, Kiến tạo để vươn xa",
+  title: "Trang Chủ - Nha khoa thẩm mỹ Trần Húy",
+  description: "Trần Húy - Nha khoa thẩm mỹ uy tín tại Cần Thơ",
 };
 
 const ContactPage = async () => {
-  const HeaderData = await getData("Config");
+  const HeaderData: any = await getData("Config");
   const ContactData = HeaderData.find((item: any) => item.id === "contact");
   return (
     <div>

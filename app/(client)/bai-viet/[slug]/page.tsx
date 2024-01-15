@@ -5,10 +5,9 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Chi tiết sản phẩm | Camera Vstarcam ",
-  description: "Camera Vstarcam - An Lành Cho Gia Đình Việt",
+  title: "Trang Chủ - Nha khoa thẩm mỹ Trần Húy",
+  description: "Trần Húy - Nha khoa thẩm mỹ uy tín tại Cần Thơ",
 };
-
 const ProductDetailPage = async ({
   params,
   searchParams,
@@ -17,9 +16,9 @@ const ProductDetailPage = async ({
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
   const searchValue: any = searchParams.spid;
-  const Data = await getData("Posts", searchValue);
+  const Data: any = await getData("Posts");
 
-  const DataCategory = await getDataLimit("Posts", undefined, 8);
+  const DataCategory = await getDataLimit("Posts", 8);
 
   return (
     <div className="p:w-auto d:w-[1300px] p:mx-2 d:mx-auto grid p:grid-cols-1 d:grid-cols-7 font-LexendDeca font-extralight gap-10 py-10">
