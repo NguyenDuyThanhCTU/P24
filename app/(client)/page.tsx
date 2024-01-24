@@ -8,14 +8,15 @@ import HomePriceList from "@components/client/Home/PriceList";
 import Medicalregister from "@components/client/Home/Medicalregister";
 import HomeNews from "@components/client/Home/News";
 import { getDataLimit } from "@lib/Get";
+import { find } from "@lib/api";
 
 export const metadata: Metadata = {
   title: "Trang Chủ - Nha khoa thẩm mỹ Trần Húy",
-  description: "Trần Húy - Nha khoa thẩm mỹ uy tín tại Cần Thơ",
+  description: "Trần Húy - Nha khoa thẩm mỹ uy tín tại Long An",
 };
 
 const HomePage = async () => {
-  const Data: any = await getDataLimit("Posts", 3);
+  const Data = await find("Posts");
   return (
     <div className="flex flex-col gap-10">
       <HomeSlide />
@@ -28,7 +29,7 @@ const HomePage = async () => {
       <HomeNews Data={Data ? Data : []} />
       <div>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8414543771264!2d105.76804037580216!3d10.029938972517273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBD4bqnbiBUaMah!5e0!3m2!1svi!2s!4v1705029788516!5m2!1svi!2s"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d489.6655737048858!2d106.367977!3d10.9388352!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310b288aeaaaaaab%3A0x7cc3481e8328f094!2zTkhBIEtIT0EgVFLhuqZOIEjDmlk!5e0!3m2!1sen!2s!4v1706064707806!5m2!1sen!2s"
           className="w-full h-[50vh]"
           loading="lazy"
         ></iframe>

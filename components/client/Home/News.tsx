@@ -4,8 +4,7 @@ import React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 
 const HomeNews = ({ Data }: any) => {
-  const DetailFirstPostDate = convertDate(Data[0]?.createdAt);
-
+  const Date = convertDate(Data[0]?.createdAt);
   return (
     <div className="bg-white py-10">
       <div className="d:w-[1440px]  p:w-auto d:mx-auto">
@@ -32,9 +31,7 @@ const HomeNews = ({ Data }: any) => {
             </div>
             <div className="col-span-2 font-LexendDeca font-extralight mt-5">
               <Link href={`/bai-viet/${Data[0]?.url}?spid=${Data[0].id}`}>
-                <p className="text[15px]  ">
-                  Nha khoa Trần Húy | {DetailFirstPostDate}
-                </p>
+                <p className="text[15px]  ">Nha khoa Trần Húy | {Date}</p>
                 <h2 className="font-normal mt-2 hover:text-blue-400 duration-300 text-[20px]">
                   {Data[0]?.title}
                 </h2>

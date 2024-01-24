@@ -77,7 +77,7 @@ import { GoGitBranch } from "react-icons/go";
 interface IconMappingType {
   [key: string]: IconType;
 }
-export const WebsiteUrl = "https://congtyads.com";
+export const WebsiteUrl = "nhakhoathammytranhuy.com";
 export const DB_URL = "nhakhoathammytranhuy";
 
 export const IconMapping: IconMappingType = {

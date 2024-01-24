@@ -1,5 +1,5 @@
 import { convertDate } from "@components/items/Handle";
-import { getData } from "@lib/Get";
+import { find } from "@lib/api";
 
 import { Metadata } from "next";
 import Link from "next/link";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const NewsPage = async () => {
-  const FetchData: any = await getData("Posts");
+  const FetchData: any = await find("Posts");
   const Data = FetchData.filter((item: any) => item.level0 === "Về Nha Khoa");
 
   return (
@@ -23,8 +23,8 @@ const NewsPage = async () => {
           </h1>
           <div className="flex flex-col gap-8">
             {Data.map((item: any, idx: number) => {
-              const Date = convertDate(item?.createdAt);
               const markup = { __html: item?.content };
+              const Date = convertDate(item?.createdAt);
               return (
                 <div key={idx} className="hover:bg-gray-100 duration-300">
                   <div className="grid grid-cols-3 gap-5 p-2">

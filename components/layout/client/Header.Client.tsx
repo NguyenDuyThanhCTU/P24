@@ -17,8 +17,9 @@ const Header = ({ Data, Type }: any) => {
   const [openSearchMB, setOpenSearchMB] = useState(false);
   const [open, setOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const router = useRouter();
+
+  const ContactData = Data?.find((items: any) => items.id === "contact");
 
   const HandleNavigate = (url: any) => {
     setOpen(false);
@@ -30,7 +31,8 @@ const Header = ({ Data, Type }: any) => {
         <div className="bg-mainColor z-50">
           <div className="w-[1300px] mx-auto flex justify-between py-2 text-white text-[13px] items-center">
             <div className="text-wrap uppercase  font-normal">
-              ĐC: {Data?.CompanyAddress} - Hotline: {Data?.Hotline}
+              ĐC: {ContactData?.CompanyAddress} - Hotline:{" "}
+              {ContactData?.Hotline}
             </div>
             <div className="flex gap-1 cursor-pointer">
               <FaFacebookF />
@@ -43,7 +45,7 @@ const Header = ({ Data, Type }: any) => {
           <div className="w-[1300px] mx-auto flex items-center justify-between py-2 h-[120px]">
             <div>
               <Image
-                src={Data?.LogoWebsite}
+                src={ContactData?.LogoWebsite}
                 alt="Logo"
                 width={100}
                 height={100}
@@ -77,61 +79,58 @@ const Header = ({ Data, Type }: any) => {
                 );
               })}
             </div>
-            <div>
-              {" "}
-              <div>
-                <div className=" relative bg-white py-3">
-                  <div className="border rounded-full bg-white border-mainGreen flex items-center ">
-                    <div className=" pl-4 w-full  justify-between items-center grid grid-cols-7">
-                      <input
-                        type="text"
-                        className="outline-none mr-2 col-span-6 text-mainGreen"
-                        placeholder="Tìm kiếm"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                      />
-                      <div>
-                        <div
-                          className={`${
-                            search ? "block" : "hidden"
-                          }  bg-gray-500 text-gray-300 w-max p-1 rounded-full text-[10px] cursor-pointer`}
-                          onClick={() => setSearch("")}
-                        >
-                          <RxCross2 />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-mainColor py-3 px-6 text-white rounded-r-full cursor-pointer">
-                      <FaSearch />
+
+            <div className=" relative bg-white py-3">
+              <div className="border rounded-full bg-white border-mainblue flex items-center ">
+                <div className=" pl-4 w-full  justify-between items-center grid grid-cols-7">
+                  <input
+                    type="text"
+                    className="outline-none mr-2 col-span-6 text-mainblue"
+                    placeholder="Tìm kiếm"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                  <div>
+                    <div
+                      className={`${
+                        search ? "block" : "hidden"
+                      }  bg-gray-500 text-gray-300 w-max p-1 rounded-full text-[10px] cursor-pointer`}
+                      onClick={() => setSearch("")}
+                    >
+                      <RxCross2 />
                     </div>
                   </div>
-                  {search && (
-                    <div className="absolute w-full bg-gray-50 top-full flex flex-col shadow-inner z-50 mt-2">
-                      <div className=" flex flex-col">
-                        {searchRs.map((product: any, idx: number) => (
-                          <Link
-                            href={`$chi-tiet-san-pham/${product.url}`}
-                            key={idx}
-                            className="cursor-pointer p-2 hover:bg-gray-100"
-                          >
-                            {product.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                </div>
+                <div className="bg-mainColor py-3 px-6 text-white rounded-r-full cursor-pointer">
+                  <FaSearch />
                 </div>
               </div>
+              {search && (
+                <div className="absolute w-full bg-gray-50 top-full flex flex-col shadow-inner z-50 mt-2">
+                  <div className=" flex flex-col">
+                    {searchRs.map((product: any, idx: number) => (
+                      <Link
+                        href={`$chi-tiet-san-pham/${product.url}`}
+                        key={idx}
+                        className="cursor-pointer p-2 hover:bg-gray-100"
+                      >
+                        {product.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
+
       <div className="d:hidden p:block bg-mainNormalBlue ">
         <div className="h-[84px] fixed z-50 w-full top-0 bg-white  text-black shadow-xl">
           <div className="px-4 w-full flex justify-between items-center">
             <Link href={`/`} className="h-[84px] w-[87px]">
               <img
-                src={Data?.LogoWebsite}
+                src={ContactData?.LogoWebsite}
                 alt="Logo"
                 className="w-full h-full p-2"
               />
@@ -170,7 +169,7 @@ const Header = ({ Data, Type }: any) => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-mainblue py-3 px-6 text-white rounded-r-full cursor-pointer">
+                <div className="bg-mainColor py-3 px-6 text-white rounded-r-full cursor-pointer">
                   <FaSearch />
                 </div>
               </div>
@@ -202,7 +201,7 @@ const Header = ({ Data, Type }: any) => {
           >
             <div className=" ">
               <div onClick={() => HandleNavigate("/")} className="p-5">
-                <img src={Data?.LogoWebsite} alt="logo" />
+                <img src={ContactData?.LogoWebsite} alt="logo" />
               </div>
 
               <div>

@@ -11,23 +11,7 @@ function App() {
   const SlideItems = [
     {
       image:
-        "https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/z2403573944441_069dfd555367b2723fea718ccf511975.jpg?alt=media&token=6c669d4e-8c28-4a95-9ffb-7248d8c6aa6b",
-      url: "/",
-    },
-    {
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/z2403571338766_6c9b21472dfd3c6f6fdeb8c93cedd81f.jpg?alt=media&token=ee20b098-a71a-4955-aef2-87bb3cda692a",
-      url: "/doi-tac",
-    },
-    {
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/z2403570992769_374d2f83163bd683ff08f6be0368372b.jpg?alt=media&token=270e4222-12d3-408c-9dbb-19c521c29c2f",
-      url: "/yeu-cau",
-    },
-    {
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/banner2_-nhakhoauytincantho-2020.jpg?alt=media&token=8ea91c24-8fc3-48dc-8f89-e4504505376d",
-      url: "/value-xuke",
+        "https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/How%20to%20Make%20(72%20x%2020%20in)(1).jpg?alt=media&token=39b1d943-6839-4273-a50f-61b9ff99283a",
     },
   ];
 

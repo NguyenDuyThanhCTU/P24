@@ -1,3 +1,5 @@
+"use client";
+import { useData } from "@context/DataProviders";
 import Image from "next/image";
 import React from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
@@ -6,6 +8,8 @@ import { CiLocationOn } from "react-icons/ci";
 import { SiGmail } from "react-icons/si";
 
 const Footer = ({ Data }: any) => {
+  const { Posts } = useData();
+
   return (
     <div className="bg-mainColorHover">
       <div className="grid p:grid-cols-1 d:grid-cols-4 p:w-auto d:w-[1200px] p:mx-2 d:mx-auto text-white py-10 gap-10">
@@ -66,7 +70,7 @@ const Footer = ({ Data }: any) => {
             Bài Viết
           </h2>
           <div className="mt-3">
-            {Data?.map((item: any, idx: number) => (
+            {Posts?.slice(0, 4).map((item: any, idx: number) => (
               <div
                 key={idx}
                 className="  hover:bg-gray-100 hover:text-mainColor duration-300 cursor-pointer border-b-[1px] pb-2 hover "

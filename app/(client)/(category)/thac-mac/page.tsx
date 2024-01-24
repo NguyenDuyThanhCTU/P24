@@ -1,6 +1,6 @@
 import PostCategory from "@components/client/Home/Posts/PostCategory";
-import { convertDate } from "@components/items/Handle";
 import { getData } from "@lib/Get";
+import { find } from "@lib/api";
 
 import { Metadata } from "next";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const ServicePage = async () => {
-  const FetchData: any = await getData("Posts");
+  const FetchData: any = await find("Posts");
   const Data = FetchData.filter((item: any) => item.level0 === "Thắc Mắc");
 
   return (
@@ -21,7 +21,6 @@ const ServicePage = async () => {
         <div className="font-LexendDeca font-extralight ">
           <div className="flex flex-col gap-8">
             {Data.map((item: any, idx: number) => {
-              const Date = convertDate(item?.createdAt);
               const markup = { __html: item?.content };
               return (
                 <div key={idx} className="hover:bg-gray-100 duration-300">
@@ -40,7 +39,6 @@ const ServicePage = async () => {
                         <h2 className="font-normal hover:text-blue-400 duration-300">
                           {item.title}
                         </h2>
-                        <p className="text[15px] text-gray-400">{Date}</p>
                       </Link>
 
                       <div

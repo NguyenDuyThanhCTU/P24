@@ -1,5 +1,4 @@
 import PostCategory from "@components/client/Home/Posts/PostCategory";
-import { convertDate } from "@components/items/Handle";
 import { getData } from "@lib/Get";
 
 import { Metadata } from "next";
@@ -27,7 +26,6 @@ const ServicePage = async ({
         <div className="font-LexendDeca font-extralight ">
           <div className="flex flex-col gap-8">
             {Data.reverse().map((item: any, idx: number) => {
-              const Date = convertDate(item?.createdAt);
               const markup = { __html: item?.content };
               return (
                 <div key={idx} className="hover:bg-gray-100 duration-300">
@@ -46,7 +44,7 @@ const ServicePage = async ({
                         <h2 className="font-normal hover:text-blue-400 duration-300">
                           {item.title}
                         </h2>
-                        <p className="text[15px] text-gray-400">{Date}</p>
+                        {/* <p className="text[15px] text-gray-400">{Date}</p> */}
                       </Link>
 
                       <div

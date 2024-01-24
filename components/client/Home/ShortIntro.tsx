@@ -38,11 +38,9 @@ const ShortIntro = () => {
             </h3>
             <div className="indent-3 mt-5">
               <p>
-                Nha Khoa Thẩm Mỹ Trần Húy là địa chỉ tin cậy của hàng ngàn khách
-                hàng trong và ngoài nước. Chúng tôi luôn nỗ lực không ngừng để
-                mang đến cho khách hàng những dịch vụ tốt nhất, đáp ứng mọi nhu
-                cầu của khách hàng, đặc biệt là những khách hàng khó tính
-                nhất...
+                Nha khoa thẩm mỹ Trần húy thành lập từ năm 2005 đến nay do bác
+                sĩ Phạm Trần Húy phụ trách chuyên môn. Bs Phạm Trần Húy hiện tại
+                đang công tác tại bệnh viên đa khoa hậu nghĩa, Đức Hòa, Long An
               </p>
             </div>
             <Link href={`/gioi-thieu`}>

@@ -1,6 +1,7 @@
 import PostCategory from "@components/client/Home/Posts/PostCategory";
 import { convertDate } from "@components/items/Handle";
 import { getData } from "@lib/Get";
+import { find } from "@lib/api";
 
 import { Metadata } from "next";
 import Link from "next/link";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const ServicePage = async () => {
-  const FetchData: any = await getData("Posts");
+  const FetchData: any = await find("Posts");
   const Data = FetchData.filter((item: any) => item.level0 === "Dịch Vụ");
 
   return (
