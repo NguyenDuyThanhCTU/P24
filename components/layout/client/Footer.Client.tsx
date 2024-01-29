@@ -23,9 +23,29 @@ const Footer = ({ Data }: any) => {
 
               <h2>Thời gian làm việc:</h2>
             </div>
-            <div>
-              Website: <span className="font-semibold"> 24/7</span> <br />
-              Công Ty: <span className="font-semibold"> 7:00 - 17:00</span>
+            <div className="flex mt-5">
+              <div className="border-2 border-white">
+                <div className="px-5 py-2">
+                  <div>
+                    <strong className="">
+                      - Giờ làm việc từ thứ 2 đến thứ bảy:
+                    </strong>
+                    <div className="font-normal text-white">
+                      <p>+ Sáng: 7 giờ - 11 giờ 30 phút</p>
+                      <p>+ Chiều: 14 giờ - 19 giờ 30 phút</p>
+                    </div>
+                  </div>
+                  <div>
+                    <strong className="">
+                      - Giờ làm việc Chủ nhật và ngày lễ:
+                    </strong>
+                    <div className="font-normal text-white">
+                      <p>+ Sáng: 7 giờ - 11 giờ 30 phút</p>
+                      <p>+ Chiều: 14 giờ - 18 giờ 00 phút</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

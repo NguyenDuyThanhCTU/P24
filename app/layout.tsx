@@ -1,16 +1,19 @@
 // import Loading from "@components/items/client-items/Loading";
 import Loading from "@components/items/Loading";
-import StorageProvider from "@components/items/StorageProvider";
+import { AuthProviders } from "@context/AuthProviders";
 import { DataProviders } from "@context/DataProviders";
 import { StateProvider } from "@context/StateProvider";
-import { find } from "@lib/api";
 import "@styles/global.css";
-
+import "@styles/CKGlobal.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { find } from "@lib/api";
+import StorageProvider from "@components/items/StorageProvider";
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const Products = await find("Products");
   const Posts = await find("Posts");
   const Config = await find("Config");
   return (
@@ -18,11 +21,19 @@ export default async function RootLayout({
       <body>
         <StateProvider>
           <DataProviders>
-            <StorageProvider Posts={Posts} Config={Config} />
-            <Loading />
-            <>{children}</>
+            <AuthProviders>
+              <StorageProvider
+                Products={Products}
+                Posts={Posts}
+                Config={Config}
+              />
+
+              <Loading />
+              <>{children}</>
+            </AuthProviders>
           </DataProviders>
         </StateProvider>
+        {/* <GoogleAnalytics gaId="G-BCK49WKS44" /> */}
       </body>
     </html>
   );

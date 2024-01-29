@@ -1,19 +1,11 @@
-import Footer from "@components/layout/client/Footer.Client";
-import Header from "@components/layout/client/Header.Client";
-import { Metadata } from "next";
+import { find } from "@lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export const metadata: Metadata = {
-  title: "Không tìm thấy trang",
-  description: "404 Not Found",
-};
-
-const NotFound = () => {
+export default async function NotFound() {
   return (
     <div>
-      <Header />
       <div className="py-10 font-LexendDeca font-extralight">
         <div className=" relative h-[500px] ">
           <Image
@@ -49,9 +41,6 @@ const NotFound = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
-};
-
-export default NotFound;
+}

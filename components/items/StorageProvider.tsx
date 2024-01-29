@@ -2,8 +2,12 @@
 import { useData } from "@context/DataProviders";
 import React, { useEffect } from "react";
 
-const StorageProvider = ({ Posts, Config }: any) => {
-  const { setPosts, setConfig } = useData();
+const StorageProvider = ({ Products, Posts, Config }: any) => {
+  const { setProducts, setPosts, setConfig } = useData();
+
+  useEffect(() => {
+    setProducts(Products);
+  }, [Products]);
 
   useEffect(() => {
     setPosts(Posts);

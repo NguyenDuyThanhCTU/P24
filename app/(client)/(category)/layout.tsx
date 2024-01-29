@@ -1,9 +1,9 @@
 import PostCategory from "@components/client/Home/Posts/PostCategory";
-import { getData } from "@lib/Get";
+import { find } from "@lib/api";
 import React from "react";
 
 const NewsLayout = async ({ children }: { children: React.ReactNode }) => {
-  const Data: any = await getData("Posts");
+  const Data: any = await find("Posts");
 
   return (
     <div className=" bg-no-repeat bg-cover bg-center bg-[url(https://firebasestorage.googleapis.com/v0/b/suanhacantho-3b53d.appspot.com/o/UI%2F1.jpg?alt=media&token=93ff34f0-0ba9-49a4-8739-63b4612fc0ff)] min-h-screen">

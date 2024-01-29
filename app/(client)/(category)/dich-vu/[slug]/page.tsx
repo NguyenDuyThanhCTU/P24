@@ -1,5 +1,3 @@
-import PostCategory from "@components/client/Home/Posts/PostCategory";
-import { getData } from "@lib/Get";
 import { find } from "@lib/api";
 
 import { Metadata } from "next";

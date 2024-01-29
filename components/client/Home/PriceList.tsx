@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const HomePriceList = () => {
@@ -31,12 +32,18 @@ const HomePriceList = () => {
             <span>...</span>
           </div>
           <div className="flex gap-5 text-white uppercase font-normal cursor-pointer mt-5">
-            <div className="bg-mainColor px-5 py-2 hover:bg-pink-700 duration-300 ">
+            <Link
+              href={`/bao-gia`}
+              className="bg-mainColor px-5 py-2 hover:bg-pink-700 duration-300 "
+            >
               Xem bảng giá
-            </div>
-            <div className="border-2 border-mainColor text-mainColor hover:border-white px-5 py-2 hover:bg-white hover:text-black duration-300 ">
+            </Link>
+            <Link
+              href={`/dich-vu`}
+              className="border-2 border-mainColor text-mainColor hover:border-white px-5 py-2 hover:bg-white hover:text-black duration-300 "
+            >
               <div>xem dịch vụ</div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

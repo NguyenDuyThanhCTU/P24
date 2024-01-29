@@ -1,4 +1,5 @@
 "use client";
+import InputForm from "@components/items/server-items/InputForm";
 import { Drawer, Modal, Pagination } from "antd";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -9,9 +10,9 @@ import { MdDeleteForever, MdNumbers } from "react-icons/md";
 import { PiCardsLight } from "react-icons/pi";
 
 import { useStateProvider } from "@context/StateProvider";
+import Search from "@components/items/server-items/Search";
 import Create from "./Partner/Create";
 import Update from "./Partner/Update";
-import Search from "@components/items/admin/Search";
 
 interface ProductProps {
   stt: number;
@@ -306,6 +307,8 @@ const Branch = () => {
           open={isOpenPartnerModel}
           width={700}
           onCancel={() => setIsOpenPartnerModel(false)}
+          destroyOnClose={true}
+          afterClose={() => setFormData({})}
         >
           <div className="border rounded-xl bg-slate-100">
             <div className="p-5 grid grid-cols-2  justify-center gap-3">
@@ -331,6 +334,7 @@ const Branch = () => {
           footer={null}
           open={isOpenUpdate}
           width={700}
+          destroyOnClose={true}
           afterClose={() => setFormData({})}
           onCancel={() => setIsOpenUpdate(false)}
         >
@@ -342,6 +346,7 @@ const Branch = () => {
           footer={null}
           open={isOpenAdd}
           width={700}
+          destroyOnClose={true}
           afterClose={() => setFormData({})}
           onCancel={() => setIsOpenAdd(false)}
         >

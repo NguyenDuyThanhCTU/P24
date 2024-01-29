@@ -6,17 +6,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { SwiperNavButtons } from "@components/items/client/SwiperNavButton";
 import Image from "next/image";
+import Link from "next/link";
 
-function App() {
-  const SlideItems = [
-    {
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/How%20to%20Make%20(72%20x%2020%20in)(1).jpg?alt=media&token=39b1d943-6839-4273-a50f-61b9ff99283a",
-    },
-  ];
-
+function Slides({ Data }: any) {
+  console.log(Data);
   return (
-    <div className="App">
+    <div>
       <h1>
         <Swiper
           modules={[Navigation, Pagination, A11y]}
@@ -36,18 +31,18 @@ function App() {
           navigation={true}
           className="mySwiper relative"
         >
-          {SlideItems.map((item, index) => (
+          {Data?.map((item: any, index: number) => (
             <div key={index}>
               <SwiperSlide>
-                {/* <Link href={item.url}> */}
-                <Image
-                  src={item.image}
-                  alt="banner"
-                  width={12000}
-                  height={500}
-                  className="w-full h-[70vh] object-cover"
-                />
-                {/* </Link> */}
+                <Link href={`/bai-viet/${item.url}`}>
+                  <Image
+                    src={item.image}
+                    alt="banner"
+                    width={12000}
+                    height={500}
+                    className="w-full h-[70vh] object-cover"
+                  />
+                </Link>
               </SwiperSlide>
             </div>
           ))}
@@ -58,4 +53,4 @@ function App() {
   );
 }
 
-export default App;
+export default Slides;

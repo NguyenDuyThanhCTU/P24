@@ -9,14 +9,11 @@ import AddressDropdown from "@components/items/AddressDropdown";
 import { BsPhone } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 import { MdOutlineConnectWithoutContact } from "react-icons/md";
-import {
-  IconMapping,
-  SocialMediaCustom,
-  SocialMediaDashboard,
-} from "@assets/item";
+
 import { CiLocationOn } from "react-icons/ci";
 import Link from "next/link";
 import Input from "./Input";
+import Image from "next/image";
 
 const Contact = ({ ContactData }: any) => {
   const [name, setName] = React.useState("");
@@ -123,7 +120,7 @@ const Contact = ({ ContactData }: any) => {
             </div>
             <div className="flex justify-center mt-3">
               <div
-                className="bg-mainorange hover:bg-orange-600 duration-300 cursor-pointer uppercase px-14 text-white rounded-full py-2"
+                className="bg-mainColor hover:bg-orange-600 duration-300 cursor-pointer uppercase px-14 text-white rounded-full py-2"
                 onClick={(e) => HandleSubmit(e)}
               >
                 Gửi yêu cầu{" "}
@@ -143,11 +140,19 @@ const Contact = ({ ContactData }: any) => {
             </p>
             <p className="text-redPrimmary ">* là các thông tin bắt buộc</p>
           </div>
-          <div>
-            <img
-              src="http://localhost:3000/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fnhakhoathammytranhuy.appspot.com%2Fo%2Fz5063646834458_37b394e2bd8a7483e84a34603a659735.jpg%3Falt%3Dmedia%26token%3D362cc39f-7ca4-422b-ac9d-18c89b50d4e7&w=640&q=75"
-              alt="demo"
-              className="shadow-sm shadow-gray-300"
+          <div className="grid grid-cols-2 gap-5">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/z5110493294648_e0aa629503c4982b544fd057fa873cef.jpg?alt=media&token=036a0b3c-9d84-4fd5-8123-fa0611290456"
+              width={400}
+              height={400}
+              alt="banner"
+            />
+            <Image
+              src="            https://firebasestorage.googleapis.com/v0/b/nhakhoathammytranhuy.appspot.com/o/z5110493308907_e7997b7c68768e1aa171567d306972d0.jpg?alt=media&token=440535ee-be3b-4764-919e-c4b2a93b8f6e
+                 "
+              width={400}
+              height={400}
+              alt="banner"
             />
           </div>
         </div>
@@ -198,7 +203,28 @@ const Contact = ({ ContactData }: any) => {
 
                   <h2>Thời gian làm việc:</h2>
                 </div>
-                <p className="font-semibold">{ContactData?.CompanyTime}</p>
+                <div className="flex mt-5">
+                  <div className="border-2 border-mainColor">
+                    <div className="px-5 py-2">
+                      <div>
+                        <strong>- Giờ làm việc từ thứ 2 đến thứ bảy:</strong>
+                        <div className="font-normal text-blue-500">
+                          <p>+ Sáng: 7 giờ - 11 giờ 30 phút</p>
+                          <p>+ Chiều: 14 giờ - 19 giờ 30 phút</p>
+                        </div>
+                      </div>
+                      <div>
+                        <strong className="text-red-500">
+                          - Giờ làm việc Chủ nhật và ngày lễ:
+                        </strong>
+                        <div className="font-normal text-blue-500">
+                          <p>+ Sáng: 7 giờ - 11 giờ 30 phút</p>
+                          <p>+ Chiều: 14 giờ - 18 giờ 00 phút</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

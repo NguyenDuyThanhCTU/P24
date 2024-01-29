@@ -43,14 +43,14 @@ const Header = ({ Data, Type }: any) => {
         </div>
         <div className="shadow-xl bg-white">
           <div className="w-[1300px] mx-auto flex items-center justify-between py-2 h-[120px]">
-            <div>
+            <Link href={`/`}>
               <Image
                 src={ContactData?.LogoWebsite}
                 alt="Logo"
                 width={100}
                 height={100}
               />
-            </div>
+            </Link>
             <div className="flex h-full gap-5">
               {HeaderItems.map((item, index) => {
                 const DropdownItem = Type?.filter(

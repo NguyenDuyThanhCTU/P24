@@ -1,4 +1,3 @@
-import { convertDate } from "@components/items/Handle";
 import { find } from "@lib/api";
 
 import { Metadata } from "next";
@@ -24,7 +23,6 @@ const NewsPage = async () => {
           <div className="flex flex-col gap-8">
             {Data.map((item: any, idx: number) => {
               const markup = { __html: item?.content };
-              const Date = convertDate(item?.createdAt);
               return (
                 <div key={idx} className="hover:bg-gray-100 duration-300">
                   <div className="grid grid-cols-3 gap-5 p-2">
@@ -42,7 +40,7 @@ const NewsPage = async () => {
                         <h2 className="font-normal hover:text-blue-400 duration-300">
                           {item.title}
                         </h2>
-                        <p className="text[15px] text-gray-400">{Date}</p>
+                        <p className="text[15px] text-gray-400">{item.date}</p>
                       </Link>
 
                       <div

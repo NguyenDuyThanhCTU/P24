@@ -1,5 +1,4 @@
 import Contact from "@components/client/Contact/Contact";
-import { getData } from "@lib/Get";
 import { find } from "@lib/api";
 import { Metadata } from "next";
 import React from "react";

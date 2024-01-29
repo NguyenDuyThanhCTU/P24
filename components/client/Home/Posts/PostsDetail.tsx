@@ -1,10 +1,9 @@
-import { convertDate } from "@components/items/Handle";
 import React from "react";
 import { AiOutlineClockCircle, AiOutlineUser } from "react-icons/ai";
 
 const PostsDetail = ({ Data }: any) => {
-  const Date = convertDate(Data?.createdAt);
-  const markup = { __html: Data?.content };
+  const markup = { __html: Data?.content ? Data?.content : "<p></p>" };
+
   return (
     <div>
       <div className=" pb-5 border-b flex flex-col gap-4">
@@ -15,7 +14,7 @@ const PostsDetail = ({ Data }: any) => {
           </div>
           <div className="flex items-center gap-1 text-gray-400 pr-5 border-r">
             <AiOutlineClockCircle />
-            <p className="">{Date}</p>
+            {/* <p className="">{Data.date}</p> */}
           </div>
           <div className="flex items-center gap-1 text-gray-400">
             <AiOutlineUser />
@@ -23,12 +22,10 @@ const PostsDetail = ({ Data }: any) => {
           </div>
         </div>
       </div>
-      {markup && (
-        <div
-          className="font-LexendDeca font-extralight mt-5 flex-col flex gap-3"
-          dangerouslySetInnerHTML={markup}
-        ></div>
-      )}
+      <div
+        className="font-LexendDeca font-extralight mt-5 flex-col flex gap-3"
+        dangerouslySetInnerHTML={markup}
+      ></div>
     </div>
   );
 };

@@ -1,6 +1,4 @@
-import PostCategory from "@components/client/Home/Posts/PostCategory";
-import { getData } from "@lib/Get";
-
+import { find } from "@lib/api";
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
@@ -10,14 +8,8 @@ export const metadata: Metadata = {
   description: "Sửa Nhà Cần Thơ - An Lành Cho Gia Đình Việt",
 };
 
-const ServicePage = async ({
-  params,
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}) => {
-  const FetchData: any = await getData("Posts");
+const ServicePage = async () => {
+  const FetchData: any = await find("Posts");
   const Data = FetchData.filter((item: any) => item.level0 === "Về Nha Khoa");
 
   return (

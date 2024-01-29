@@ -7,7 +7,6 @@ import React from "react";
 import HomePriceList from "@components/client/Home/PriceList";
 import Medicalregister from "@components/client/Home/Medicalregister";
 import HomeNews from "@components/client/Home/News";
-import { getDataLimit } from "@lib/Get";
 import { find } from "@lib/api";
 
 export const metadata: Metadata = {
@@ -17,9 +16,10 @@ export const metadata: Metadata = {
 
 const HomePage = async () => {
   const Data = await find("Posts");
+  const Slide = await find("Slides");
   return (
     <div className="flex flex-col gap-10">
-      <HomeSlide />
+      <HomeSlide Data={Slide} />
       <div className="d:w-[1200px] mx-auto  p:w-auto">
         <ShortIntro />
       </div>

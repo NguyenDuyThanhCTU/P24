@@ -1,10 +1,8 @@
-import { convertDate } from "@components/items/Handle";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 
 const HomeNews = ({ Data }: any) => {
-  const Date = convertDate(Data[0]?.createdAt);
   return (
     <div className="bg-white py-10">
       <div className="d:w-[1440px]  p:w-auto d:mx-auto">
@@ -31,7 +29,9 @@ const HomeNews = ({ Data }: any) => {
             </div>
             <div className="col-span-2 font-LexendDeca font-extralight mt-5">
               <Link href={`/bai-viet/${Data[0]?.url}?spid=${Data[0].id}`}>
-                <p className="text[15px]  ">Nha khoa Trần Húy | {Date}</p>
+                <p className="text[15px]  ">
+                  Nha khoa Trần Húy | {Data[0]?.date}
+                </p>
                 <h2 className="font-normal mt-2 hover:text-blue-400 duration-300 text-[20px]">
                   {Data[0]?.title}
                 </h2>
@@ -44,8 +44,6 @@ const HomeNews = ({ Data }: any) => {
           </div>
           <div className="flex-1">
             {Data.slice(1, 6).map((item: any, idx: number) => {
-              const DetailPostDate = convertDate(item?.createdAt);
-
               return (
                 <div key={idx} className="hover:bg-gray-100 duration-300 py-2">
                   <div className="grid grid-cols-3 gap-5 p-2 pt-0">
@@ -61,7 +59,7 @@ const HomeNews = ({ Data }: any) => {
                     <div className="col-span-2 ">
                       <Link href={`/bai-viet/${item.url}?spid=${item.id}`}>
                         <p className="text[15px]  ">
-                          Nha khoa Trần Húy | {DetailPostDate}
+                          Nha khoa Trần Húy | {item.date}
                         </p>
                         <h2 className="font-normal mt-2 hover:text-blue-400 duration-300 text-[20px]">
                           {item.title}
