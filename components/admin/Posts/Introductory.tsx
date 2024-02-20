@@ -15,7 +15,6 @@ const PostIntroductory = ({ Data }: any) => {
   const router = useRouter();
 
   const HandleSubmit = () => {
-    console.log(FormData);
     setFormData({ ...FormData, level0: "Introductory" });
     updateOne("Posts", "introductory", FormData).then(() => {
       setIsOpenModal(false);

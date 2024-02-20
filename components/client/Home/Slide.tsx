@@ -9,7 +9,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Slides({ Data }: any) {
-  console.log(Data);
   return (
     <div>
       <h1>
@@ -40,7 +39,7 @@ function Slides({ Data }: any) {
                     alt="banner"
                     width={12000}
                     height={500}
-                    className="w-full h-[70vh] object-cover"
+                    className="w-full p:hau d:h-[70vh] object-cover"
                   />
                 </Link>
               </SwiperSlide>

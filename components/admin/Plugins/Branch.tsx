@@ -183,7 +183,6 @@ const Branch = () => {
         sortedData.sort((a, b) => b.title.localeCompare(a.title));
         break;
       default:
-        console.log("Default");
 
       // sortedData.sort((a, b) => new Date(b.time) - new Date(a.time));
     }

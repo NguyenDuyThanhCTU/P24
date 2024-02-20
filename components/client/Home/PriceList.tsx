@@ -9,7 +9,7 @@ const HomePriceList = () => {
         <div className="d:text-black p:text-white">
           <h2 className="text-[30px] font-normal uppercase ">Bảng giá</h2>
           <div className="text-[26px] font-normal">
-            Áp dụng đến hết năm 2019
+            Áp dụng đến hết năm 2024
           </div>
           <div className="flex flex-col gap-2">
             <div>
